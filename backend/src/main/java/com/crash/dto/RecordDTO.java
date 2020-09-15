@@ -5,11 +5,13 @@ import java.time.Instant;
 
 import com.crash.entities.Record;
 import com.crash.entities.enums.Platform;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class RecordDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT")
 	private Instant moment;
 	private String name;
 	private Integer age;

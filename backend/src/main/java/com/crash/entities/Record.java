@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "tb_record")
 public class Record implements Serializable{
@@ -21,6 +23,7 @@ public class Record implements Serializable{
 	private Long id;
 	private String name;
 	private Integer age;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss ", timezone = "GMT")
 	private Instant moment;
 	
 	@ManyToOne
