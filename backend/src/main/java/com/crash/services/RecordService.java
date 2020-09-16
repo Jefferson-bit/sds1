@@ -1,8 +1,6 @@
 package com.crash.services;
 
-import java.text.SimpleDateFormat;
 import java.time.Instant;
-import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,8 +17,6 @@ import com.crash.repositories.RecordRepository;
 
 @Service
 public class RecordService {
-
-	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
 	@Autowired
 	private RecordRepository recordRepository;
@@ -39,7 +35,6 @@ public class RecordService {
 		entity.setGame(game);
 		entity = recordRepository.save(entity);
 		return new RecordDTO(entity);
-		
 	}
 	
 	@Transactional(readOnly = true)
