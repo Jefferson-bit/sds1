@@ -1,7 +1,7 @@
 import { RecordItem } from '../Home/Records/types';
 import { Game } from './types';
 
-export const buildBarSeries = (games: Game[], records: RecordItem[]) => {
+export const buildBarSeries = (games: Game[], records: RecordItem[]) => { 
   const mappedGames = games.map(game => {
     const filteredGames = records.filter(item => {
       return item.gameTitle === game.title && item.gamePlatform === game.platform
